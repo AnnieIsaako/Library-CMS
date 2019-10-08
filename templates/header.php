@@ -4,12 +4,15 @@
     } else {
         require '../vendor/autoload.php';
     }
+    
+    $dotenv = Dotenv\Dotenv::create(__DIR__ . '/..');
+    $dotenv->load();
 
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <base href="http://192.168.33.10/Library-CMS/">
+    <base href="<?php echo getenv('PROJECT_URL'); ?>">
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
