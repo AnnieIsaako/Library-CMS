@@ -8,6 +8,8 @@
     $dotenv = Dotenv\Dotenv::create(__DIR__ . '/..');
     $dotenv->load();
 
+    require('connection.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
