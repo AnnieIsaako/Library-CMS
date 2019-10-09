@@ -29,15 +29,16 @@
                       <input type="text" autocomplete="off" class="form-control"  name="author" placeholder="Enter movies director" value="">
                     </div>
 
+                    <div class="form-group author-group">
+                      <label for="author">Year Released</label>
+                      <input type="text" autocomplete="off" class="form-control"  name="author" placeholder="Enter movie's year Released" value="">
+                    </div>
+
                     <div class="form-group">
                       <label for="description">Movie Description</label>
                       <textarea class="form-control" name="description" rows="8" cols="80" placeholder="Description about the movie"></textarea>
                     </div>
 
-                    <div class="form-group">
-                      <label for="description">Year Released</label>
-                      <textarea class="form-control" name="description" rows="8" cols="80" placeholder="Year that the movie was released"></textarea>
-                    </div>
 
                     <div class="form-group">
                         <label for="file">Upload an Image</label>
@@ -51,4 +52,4 @@
 
     </div>
 
-    <?php require('../templates/footer.php'); ?>
+    <?php require('../templates/script.php'); ?>
