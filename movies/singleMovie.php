@@ -17,7 +17,7 @@
 
         <div class="row mb-2">
             <div class="col-12 col-sm-4 align-self-center">
-                <img class="img-fluid" src="images/HarryPotter1.jpg" alt="">
+                <img class="img-fluid" src="images/IronMan1.jpg" alt="">
             </div>
             <div class="col-12 col-sm-8 align-self-center">
                 <h3>Iron Man</h3>
