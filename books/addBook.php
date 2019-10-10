@@ -70,7 +70,7 @@
             if($booksResult && mysqli_affected_rows($dbc) > 0) {
                 header('Location:singleBook.php');
             } else {
-                die('There is something wrong with your sql');
+                die('There is something wrong with your sql query');
             }
         }
 
