@@ -1,4 +1,11 @@
-<?php require('../templates/header.php'); ?>
+<?php
+    require('../templates/header.php');
+
+    if($_POST) {
+        // var_dump($_POST);
+        extract($_POST);
+    }
+?>
 
         <div class="row mb-2">
             <div class="col">
