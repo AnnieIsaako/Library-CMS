@@ -57,10 +57,12 @@
             $safeDescription = mysqli_real_escape_string($dbc, $description);
 
 
-
             $findSql = "SELECT * FROM `authors` WHERE name = '$safeAuthor'";
             $findResult = mysqli_query($dbc, $findSql);
             if ($findResult && mysqli_affected_rows($dbc) > 0) {
+                $foundAuthor = mysqli_fetch_array($findResult, MYSQLI_ASSOC); // convert it into a way that we can read it
+                $authorID = $foundAuthor['_id'];
+            } else if ($findResult && mysqli_affected_rows($dbc) === 0){
                 $sql = "INSERT INTO `authors`(`name`) VALUES ('$author')";
                 $result = mysqli_query($dbc, $sql);
                 if($result && mysqli_affected_rows($dbc) > 0) {
@@ -68,14 +70,11 @@
                 } else {
                     die('couldnt add author');
                 }
-            } else if ($findResult && mysqli_affected_rows($dbc) > 0){
-
             } else {
                 die('Couldn\'t find an author.');
             }
 
 
-            die();
             $booksSql= "INSERT INTO `books`(`title`, `description`, `year`, `author_id`) VALUES ('$safeBkTitle', '$safeDescription', $safeYear, $authorID)";
             $booksResult = mysqli_query($dbc, $booksSql);
             if($booksResult && mysqli_affected_rows($dbc) > 0) { // if successful query and something happened

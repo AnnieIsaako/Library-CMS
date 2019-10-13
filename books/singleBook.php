@@ -1,7 +1,8 @@
 <?php
     require('../templates/header.php');
     $bookID = $_GET['id'];
-    $sql = "SELECT * FROM `books` WHERE _id = $bookID"; // select all rows that has the same _id of bookID
+    // $sql = "SELECT * FROM `books` WHERE _id = $bookID"; // select all rows that has the same _id of bookID
+    $sql = "SELECT books.`_id` as bookID, `title`, `description`, `year`, authors.name as author_name FROM `books` INNER JOIN authors ON books.author_id = authors._id WHERE books._id = $bookID";
     $result = mysqli_query($dbc, $sql);
 
     if($result && mysqli_affected_rows($dbc) > 0) { // you have run the query and you've got a row
@@ -32,7 +33,7 @@
             </div>
             <div class="col-12 col-sm-8 align-self-center">
                 <h3><?php echo $singleBook['title']; ?></h3>
-                <h4><?php echo $singleBook['author_id']; ?></h4>
+                <h4><?php echo $singleBook['author_name']; ?></h4>
                 <p><?php echo $singleBook['year']; ?></p>
             </div>
         </div>
@@ -56,7 +57,8 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-danger">Confirm Delete</button>
+                    <!-- <button type="button" class="btn btn-danger">Confirm Delete</button> -->
+                    <a href="books/delete.php" class="btn btn-danger">Confirm Delete</a>
                 </div>
             </div>
         </div>

@@ -22,9 +22,9 @@
         </div>
 
         <div class="row d-flex">
-            <?php if($allBooks): ?> 
+            <?php if($allBooks): ?>
                 <?php foreach($allBooks as $singleBook): ?>
-                    <div class="col-12 col-md-3">
+                    <div class="col-12 col-md-3 pb-3">
                          <div class="card mb-4 shadow-sm h-100">
                              <img class="card-img-top" src="images/HarryPotter1.jpg" alt="Card image cap">
                              <div class="card-body">
