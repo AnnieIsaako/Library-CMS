@@ -4,6 +4,23 @@
     if($_POST) {
         // var_dump($_POST);
         extract($_POST);
+        $movieErrors = array();
+
+        if (empty($title)) {
+          array_push($movieErrors, 'Please enter a movie title');
+        } else if (strlen($title) < 5) {
+          array_push($movieErrors, 'The title should have at least 5 characters');
+        }  else if (strlen($title) > 1000) {
+          array_push($movieErrors, 'The title can be no more than 1000 characters');
+        }
+
+        if (empty($director)) {
+          array_push($movieErrors, 'Please enter a movie director');
+        } else if (strlen($director) < 6) {
+          array_push($movieErrors, 'The movie title should have a least 6 characters');
+        }  else if (strlen($director) > 100) {
+          array_push($movieErrors, 'The movie director name can be no more than 100 characters');
+        }
     }
 ?>
 
