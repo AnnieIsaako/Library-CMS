@@ -1,7 +1,7 @@
 <?php
     require('../templates/header.php');
 
-    $sql = "SELECT `_id`, `title` FROM `books` WHERE 1"; // 1 means you have found something
+    $sql = "SELECT `_id`, `title` FROM `books` WHERE 1"; // 1 means you have found something, it means true
     $result = mysqli_query($dbc, $sql);
 
     if($result) {
@@ -22,7 +22,7 @@
         </div>
 
         <div class="row d-flex">
-            <?php if($allBooks): ?>
+            <?php if($allBooks): ?> 
                 <?php foreach($allBooks as $singleBook): ?>
                     <div class="col-12 col-md-3">
                          <div class="card mb-4 shadow-sm h-100">

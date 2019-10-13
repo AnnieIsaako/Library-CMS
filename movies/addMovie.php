@@ -21,6 +21,26 @@
         }  else if (strlen($director) > 100) {
           array_push($movieErrors, 'The movie director name can be no more than 100 characters');
         }
+
+        if (empty($year)) {
+            array_push($movieErrors, 'State the year that the movie was released');
+        } else if (strlen($year) < 4) {
+            array_push($movieErrors, 'The year must have 4 digits');
+        } else if (strlen($year) > 4) {
+            array_push($movieErrors, 'The year can\'t be more than 4 digits');
+        }
+
+        if (empty($description)) {
+            array_push($movieErrors, 'Enter a description');
+        } else if (strlen($description) > 65535) {
+            array_push($movieErrors, 'Description has to be at least ');
+        } else if(strlen($description) < 15) {
+            array_push($movieErrors, 'Description must be at least 15 characters long');
+        }
+
+        if ($movieErrors > 1) {
+            var_dump($movieErrors);
+        }
     }
 ?>
 
@@ -50,12 +70,12 @@
 
                     <div class="form-group author-group">
                       <label for="author">Director</label>
-                      <input type="text" autocomplete="off" class="form-control"  name="author" placeholder="Enter movies director" value="">
+                      <input type="text" autocomplete="off" class="form-control"  name="director" placeholder="Enter movies director" value="">
                     </div>
 
                     <div class="form-group author-group">
                       <label for="author">Year Released</label>
-                      <input type="text" autocomplete="off" class="form-control"  name="author" placeholder="Enter movie's year Released" value="">
+                      <input type="number" autocomplete="off" class="form-control"  name="year" placeholder="Enter movie's year Released" value="">
                     </div>
 
                     <div class="form-group">

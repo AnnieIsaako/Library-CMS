@@ -7,7 +7,7 @@
         // var_dump('we are connected');
         $dbc->set_charset('utf-8mb4');
     } else {
-        die('Couldn\'t connect to the db, check your env file. something is wrong. There is an example of the env file called example.env. Please duplicate and fill in the variables');
+        die('Couldn\'t connect to the db, check your env file. There is an example of the env file called "example.env" Please duplicate and fill in the variables, or go to the read me.');
     }
 
 

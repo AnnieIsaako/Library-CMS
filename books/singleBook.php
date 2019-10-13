@@ -1,12 +1,12 @@
 <?php
     require('../templates/header.php');
     $bookID = $_GET['id'];
-    $sql = "SELECT * FROM `books` WHERE _id = $bookID";
+    $sql = "SELECT * FROM `books` WHERE _id = $bookID"; // select all rows that has the same _id of bookID
     $result = mysqli_query($dbc, $sql);
 
-    if($result && mysqli_affected_rows($dbc) > 0) { // you have runt he query and got a row
+    if($result && mysqli_affected_rows($dbc) > 0) { // you have run the query and you've got a row
         $singleBook = mysqli_fetch_array($result, MYSQLI_ASSOC); // fetch one row
-    } else if ($result && mysqli_affected_rows($dbc) === 0) {
+    } else if ($result && mysqli_affected_rows($dbc) === 0) { // if query was successful, but doesn't get anything back
         header('Location: ../error/404.php');
     } else {
         die('something went wrong with getting the book');

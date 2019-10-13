@@ -5,8 +5,8 @@
         require '../vendor/autoload.php';
     }
 
-    $dotenv = Dotenv\Dotenv::create(__DIR__ . '/..');
-    $dotenv->load();
+    $dotenv = Dotenv\Dotenv::create(__DIR__ . '/..'); // where is the env file?
+    $dotenv->load(); // load the env file
 
     require('connection.php');
 
